@@ -9,12 +9,15 @@
 **Assist Vision** — Wearable Assistive Navigation System for Visually Impaired Users.
 
 ## 2) Project Description
-Assist Vision is a wearable assistive technology prototype designed to improve environmental awareness for visually impaired users through multi-sensor fusion and audio guidance.  
-The system combines obstacle sensing, visual event detection, directional sound awareness, and emergency support features across embedded hardware and an Android mobile application.
+Assist Vision is a wearable assistive navigation prototype using color-based object classification, directional audio awareness, ultrasonic obstacle detection, Bluetooth voice feedback, and emergency assistance features.
+
+### Important Reality Check
+The current vision pipeline is **color-based vehicle/object classification** and **not AI vehicle detection**.  
+This project remains a prototype focused on practical assistive feedback, not a certified autonomous perception system.
 
 ## 3) Features
 - Ultrasonic obstacle detection for near-range hazards
-- Visual detection via ESP32-CAM module
+- Color-based vehicle/object classification via ESP32-CAM module
 - Sound direction awareness using dual microphones
 - ESP-NOW communication between ESP32-CAM and ESP32 DevKit V1
 - Bluetooth Classic communication between ESP32 DevKit V1 and Android app
@@ -28,7 +31,7 @@ The system combines obstacle sensing, visual event detection, directional sound 
 | Component | Purpose |
 |---|---|
 | ESP32 DevKit V1 | Main controller and sensor fusion node |
-| ESP32-CAM AI Thinker | Visual detection module |
+| ESP32-CAM AI Thinker | Color-based classification module |
 | Ultrasonic Sensor | Obstacle distance detection |
 | Dual Microphones | Sound direction detection |
 | Emergency Push Button | Immediate panic/emergency trigger |
@@ -46,7 +49,7 @@ The system combines obstacle sensing, visual event detection, directional sound 
 
 ## 6) System Architecture Diagram
 ```text
-ESP32-CAM (Visual Detection)
+ESP32-CAM (Color-Based Classification)
           |
        ESP-NOW
           |
@@ -74,7 +77,7 @@ Text To Speech   Emergency Contact System
 1. Assemble hardware modules into wearable enclosure.
 2. Flash firmware to:
    - ESP32 DevKit V1 (main logic)
-   - ESP32-CAM AI Thinker (visual detection sender)
+   - ESP32-CAM AI Thinker (color-based classification sender)
 3. Install Android app on target phone.
 4. Pair Android device with ESP32 DevKit V1 over Bluetooth Classic.
 5. Calibrate sensors (distance thresholds, microphone sensitivity, alert priorities).
@@ -113,7 +116,7 @@ Android App
 ## 12) ESP-NOW Communication Flow
 ```text
 ESP32-CAM
-  -> Performs visual detection
+  -> Performs color-based vehicle/object classification
   -> Sends compact detection message via ESP-NOW
 ESP32 DevKit V1
   -> Receives and validates packet
