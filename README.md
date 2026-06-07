@@ -161,9 +161,8 @@ AssistVision/
 - Contributors: Open by explicit owner authorization only
 
 ## 17) License (All Rights Reserved)
-**All Rights Reserved.**  
-This project, including all source code, hardware design concepts, documentation, assets, and related materials, is the intellectual property of the project owner.  
-No usage rights are granted by publication of this repository.
+This repository uses an **All Rights Reserved** license.  
+See the full license terms in [`LICENSE`](LICENSE).
 
 ## Restricted Use Policy
 No individual, organization, company, institution, government agency, commercial entity, or third party is granted permission to use, deploy, redistribute, commercialize, manufacture, sell, modify, rebrand, integrate, or distribute this project without explicit written permission from the project owner.
